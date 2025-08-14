@@ -1,0 +1,72 @@
+Inicio del programa
+
+Definir clase Mascota
+  Atributos privados:
+    string nombre
+    string tipo
+    string sonido
+    int edad
+    int edadHumana
+
+  Método Constructor(nombre, edad, tipo, sonido)
+    Asignar valores a los atributos
+    Llamar a CalcularEdadHumana()
+
+  Método privado CalcularEdadHumana()
+    Si tipo es "perro" → edadHumana = edad × 7
+    Si tipo es "gato" → edadHumana = edad × 6
+    En otro caso → edadHumana = edad × 10
+
+  Método MostrarInformacion()
+    Mostrar "Nombre: " + nombre
+    Mostrar "Edad: " + edad + " años"
+    Mostrar "Tipo: " + tipo
+
+  Método EmitirSonido()
+    Mostrar nombre + " sonido: " + sonido
+
+  Método MostrarEdadHumana()
+    Mostrar "Edad en años humanos: " + edadHumana
+
+  Método ActualizarDatos(nuevoNombre, nuevaEdad, nuevoTipo, nuevoSonido)
+    nombre = nuevoNombre
+    edad = nuevaEdad
+    tipo = nuevoTipo
+    sonido = nuevoSonido
+    Llamar a CalcularEdadHumana()
+
+Fin clase Mascota
+
+Definir clase principal Program
+  Método Main()
+
+    // Crear las mascotas con su información original
+    Crear Oreo (6 años, perro, "guau guau")
+    Crear Wallas (2 años, hamster, "scuic")
+    Crear Copo (4 años, gato, "miau miau")
+    Crear Rena (4 años, gato, "trrr")
+    Crear Huevón (3 años, gato, "ma")
+    Crear Tazón (3 años, gato, "ahhh")
+
+    // Lista de todas las mascotas
+    Para cada mascota en la lista:
+      Mostrar "--- Información inicial ---"
+      mascota.MostrarInformacion()
+      mascota.EmitirSonido()
+      mascota.MostrarEdadHumana()
+
+      Mostrar ">> Actualizando datos de la mascota..."
+      Si mascota es Oreo → mascota.ActualizarDatos("Max", 8, "perro", "woof woof")
+      Si mascota es Wallas → mascota.ActualizarDatos("Chispa", 58, "hamster", "squeeek")
+      Si mascota es Copo → mascota.ActualizarDatos("Pelusa", 5, "gato", "mrr mrr")
+      Si mascota es Rena → mascota.ActualizarDatos("Rena", 5, "gato", "trrrr más largo")
+      Si mascota es Huevón → mascota.ActualizarDatos("Huevón", 6, "gato", "maa más fuerte")
+      Si mascota es Tazón → mascota.ActualizarDatos("Tazón", 7, "gato", "ahhh profundo")
+
+      Mostrar "--- Después de la actualización ---"
+      mascota.MostrarInformacion()
+      mascota.EmitirSonido()
+      mascota.MostrarEdadHumana()
+    Fin para
+
+Fin clase Program
