@@ -1,0 +1,128 @@
+using System;
+
+namespace Mascotas
+{
+    class Mascota
+    {
+        private string nombre;
+        private string tipo;
+        private string sonido;
+        private int edad;
+        private int edadHumana;
+
+        public Mascota(string nombre, int edad, string tipo, string sonido)
+        {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.tipo = tipo;
+            this.sonido = sonido;
+            CalcularEdadHumana();
+        }
+
+        private void CalcularEdadHumana()
+        {
+            // Fórmula simple: multiplicar por un factor según el tipo
+            if (tipo.ToLower() == "perro")
+                edadHumana = edad * 7;
+            else if (tipo.ToLower() == "gato")
+                edadHumana = edad * 6;
+            else
+                edadHumana = edad * 10; // Ejemplo para hamster u otros
+        }
+
+        public void MostrarInformacion()
+        {
+            Console.WriteLine($"Nombre: {nombre}");
+            Console.WriteLine($"Edad: {edad} años");
+            Console.WriteLine($"Tipo: {tipo}");
+        }
+
+        public void EmitirSonido()
+        {
+            Console.WriteLine($"{nombre} sonido: {sonido}");
+        }
+
+        public void MostrarEdadHumana()
+        {
+            Console.WriteLine($"Edad en años humanos: {edadHumana}");
+        }
+
+        public void CambiarEdad(int nuevaEdad)
+        {
+            edad = nuevaEdad;
+            CalcularEdadHumana();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Mascota MascotaB = new Mascota("Oreo", 6, "perro", "guau guau");
+            Mascota MascotaC = new Mascota("Wallas", 2, "hamster", "scuic");
+            Mascota MascotaD = new Mascota("Copo", 4, "gato", "miau miau");
+            Mascota MascotaE = new Mascota("Rena", 4, "gato", "trrr");
+            Mascota MascotaF = new Mascota("Huevón", 3, "gato", "ma");
+            Mascota MascotaG = new Mascota("Tazón", 3, "gato", "ahhh");
+
+            // MascotaB
+            MascotaB.MostrarInformacion();
+            MascotaB.EmitirSonido();
+            MascotaB.MostrarEdadHumana();
+            MascotaB.CambiarEdad(8);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaB.MostrarInformacion();
+            MascotaB.MostrarEdadHumana();
+            Console.WriteLine();
+
+            // MascotaC
+            MascotaC.MostrarInformacion();
+            MascotaC.EmitirSonido();
+            MascotaC.MostrarEdadHumana();
+            MascotaC.CambiarEdad(58);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaC.MostrarInformacion();
+            MascotaC.MostrarEdadHumana();
+            Console.WriteLine();
+
+            // MascotaD
+            MascotaD.MostrarInformacion();
+            MascotaD.EmitirSonido();
+            MascotaD.MostrarEdadHumana();
+            MascotaD.CambiarEdad(4);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaD.MostrarInformacion();
+            MascotaD.MostrarEdadHumana();
+            Console.WriteLine();
+
+            // MascotaE
+            MascotaE.MostrarInformacion();
+            MascotaE.EmitirSonido();
+            MascotaE.MostrarEdadHumana();
+            MascotaE.CambiarEdad(5);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaE.MostrarInformacion();
+            MascotaE.MostrarEdadHumana();
+            Console.WriteLine();
+
+            // MascotaF
+            MascotaF.MostrarInformacion();
+            MascotaF.EmitirSonido();
+            MascotaF.MostrarEdadHumana();
+            MascotaF.CambiarEdad(6);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaF.MostrarInformacion();
+            MascotaF.MostrarEdadHumana();
+            Console.WriteLine();
+
+            // MascotaG
+            MascotaG.MostrarInformacion();
+            MascotaG.EmitirSonido();
+            MascotaG.MostrarEdadHumana();
+            MascotaG.CambiarEdad(7);
+            Console.WriteLine("Después de cambiar la edad:");
+            MascotaG.MostrarInformacion();
+            MascotaG.MostrarEdadHumana();
+        }
+    }
+}
